@@ -2,11 +2,7 @@ public class Ej16Multiplosde5o7{
 public static void main(String[]args){
   
   int[] numero=new int[20];
-  int[] multiplo5=new int[20];
-  int[] multiplo7=new int[20];
   int i=0;
-  int contadormultiplos5=0;
-  int contadormultiplos7=0;
   
   System.out.println("Se van a crear 20 nums aleatorios del 0 al 400: ");
   
