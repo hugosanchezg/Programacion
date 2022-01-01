@@ -13,7 +13,7 @@ public class Ej1al14 {
 		int numero = 0;
 		int digito = 0;
 		
-		/*
+		
 		//EJ 1: CAPICUA
 		System.out.println("EJ 1. CAPICUA:");
 		do {
@@ -168,7 +168,7 @@ public class Ej1al14 {
 		int pegapordelante = pegaPorDelante(numero,digito);
 		System.out.println("El resultado es "+pegapordelante);
 		
-		*/
+		
 		//EJ 13: TROZO DE NUMERO
 		System.out.println("\nEJ 13. TROZO DE NUMERO:");
 		
