@@ -11,7 +11,9 @@ public class Ej1al14 {
 		
 		//pedimos un nº > 10 para el ej1
 		int numero = 0;
+		int digito = 0;
 		
+		/*
 		//EJ 1: CAPICUA
 		System.out.println("EJ 1. CAPICUA:");
 		do {
@@ -100,6 +102,106 @@ public class Ej1al14 {
 		
 		int digitoposicion = digitoN(numero,n);
 		System.out.println("El dígito de la posición "+ n + " es " + digitoposicion);
+		
+		
+		//EJ 8: POSICION DE DIGITO
+		System.out.println("\nEJ 8. POSICION DE DIGITO:");
+		
+        System.out.print("Introduce un número: ");
+        numero = sc.nextInt();
+        
+        System.out.print("¿De qué dígito quieres que te diga la posición? ");
+        digito = sc.nextInt();
+		
+		int posiciondigito = posicionDeDigito(numero,digito);
+		System.out.println("El dígito "+ digito + " está en la posición " + posiciondigito);
+				
+		
+		//EJ 9: QUITA POR DETRAS
+		System.out.println("\nEJ 9. QUITA POR DETRAS:");
+		
+        System.out.print("Introduce un número: ");
+        numero = sc.nextInt();
+        
+        System.out.print("¿Cuántos dígitos quieres quitar de detrás? ");
+        digito = sc.nextInt();
+		
+		int quitapordetras = quitaPorDetras(numero,digito);
+		System.out.println("El resultado es "+quitapordetras);
+	
+		
+		//EJ 10: QUITA POR DELANTE
+		System.out.println("\nEJ 10. QUITA POR DELANTE:");
+		
+        System.out.print("Introduce un número: ");
+        numero = sc.nextInt();
+        
+        System.out.print("¿Cuántos dígitos quieres quitar por delante? ");
+        digito = sc.nextInt();
+		
+		int quitapordelante = quitaPorDelante(numero,digito);
+		System.out.println("El resultado es "+quitapordelante);
+		
+		
+		//EJ 11: PEGA POR DETRAS
+		System.out.println("\nEJ 11. PEGA POR DETRAS:");
+		
+        System.out.print("Introduce un número: ");
+        numero = sc.nextInt();
+        
+        System.out.print("¿Qué dígito quieres pegar detrás? ");
+        digito = sc.nextInt();
+		
+		int pegapordetras = pegaPorDetras(numero,digito);
+		System.out.println("El resultado es "+pegapordetras);
+		
+		
+		//EJ 12: PEGA POR DELANTE
+		System.out.println("\nEJ 12. PEGA POR DELANTE:");
+		
+        System.out.print("Introduce un número: ");
+        numero = sc.nextInt();
+        
+        System.out.print("¿Qué número quieres pegar por delante? ");
+        digito = sc.nextInt();
+		
+		int pegapordelante = pegaPorDelante(numero,digito);
+		System.out.println("El resultado es "+pegapordelante);
+		
+		*/
+		//EJ 13: TROZO DE NUMERO
+		System.out.println("\nEJ 13. TROZO DE NUMERO:");
+		
+		int posInicial = 0;
+		int posFinal = 0;
+		
+        System.out.print("Introduce un número: ");
+        numero = sc.nextInt();
+        
+        System.out.print("¿Qué posición inicial? ");
+        posInicial = sc.nextInt();
+        
+        System.out.print("¿Qué posición final? ");
+        posFinal = sc.nextInt();
+		
+		int trozodenumero = trozoDeNumero(numero,posInicial,posFinal);
+		System.out.println("El resultado es "+trozodenumero);
+		
+		
+		//EJ 14: JUNTA NUMEROS
+		System.out.println("\nEJ 14. JUNTA NUMEROS:");
+		int numero2 = 0;
+		
+        System.out.print("Introduce un número: ");
+        numero = sc.nextInt();
+        
+        System.out.print("Introduce otro número ");
+        numero2 = sc.nextInt();
+		
+		int juntanumeros = juntaNumeros(numero,numero2);
+		System.out.println("Los dos juntos son: "+juntanumeros);
+		
+		
 		
 	}
 	
@@ -260,14 +362,111 @@ public class Ej1al14 {
 		
 		int resultado = 0;
 		
+		//posicion 1 es la primera
+		resultado = (int)(numero / potencia(10, digitos(numero) - n) % 10);
+		//hacemos el número potencia 10 elevado a el numero de dígitos menos la posición
+		//de esto sacamos la posicion del número al hacerle el resto (%10)
 		
+		/*posicion 0 es la primera
+		resultado = (int)(numero / potencia(10, digitos(numero) - n -1) % 10);
+		*/
 		
+		return resultado;
+	}
+	
+	//8. POSICION DE DIGITO
+	public static int posicionDeDigito(int numero, int digito) {
+
+		int posicion = 0;
 		
+		for (int i = 0; i < digitos(numero); i++) {
+			
+			if (digitoN(numero, i) == digito) { 
+				
+				posicion = i;
+				
+			}else {posicion = -1;}
+			
+		}
+		
+		return posicion;
+		
+	}
+	
+	//9. QUITA POR DETRAS
+	public static int quitaPorDetras(int numero, int digito) {
+		
+		int resultado = 0;
+		
+		resultado =  numero / (int)potencia(10, digito);
 		
 		return resultado;
 		
 	}
 	
-	
-	
+	//10. QUITA POR DELANTE
+	public static int quitaPorDelante(int numero, int digito) {
+		
+		int resultado = 0;
+		
+		resultado =  numero % (int)potencia(10, digitos(numero) - digito);
+		
+		return resultado;
+		
 	}
+	
+	//11. PEGA POR DETRAS
+	public static int pegaPorDetras(int numero, int digito) {
+		
+		int resultado = 0;
+		
+		resultado =  numero * 10 + digito;
+		
+		return resultado;
+		
+	}
+	
+	//12. PEGA POR DELANTE
+	public static int pegaPorDelante(int numero, int digito) {
+		
+		int resultado = 0;
+		
+		resultado =  digito * (int)potencia(10, digitos(numero)) + numero;
+		
+		return resultado;
+			
+	}
+	
+	//13. TROZO DE NUMERO
+	public static int trozoDeNumero(int numero, int posInicial, int posFinal) {
+		
+		int resultado = 0;
+		
+		for (int i = posInicial; i <= posFinal; i++) {
+			
+			resultado = resultado * 10 + digitoN(numero, i);
+			
+		}
+		
+		return resultado;
+			
+	}
+		
+	//14. JUNTA NUMEROS
+	public static int juntaNumeros(int numero, int numero2) {
+		
+		int resultado = numero;
+		
+		for (int i = 0; i < digitos(numero2); i++) {
+			
+		      resultado = resultado * 10 + digitoN(numero2, i);
+		      
+		}
+		
+		return resultado;
+			
+	}
+		
+		
+		
+}
