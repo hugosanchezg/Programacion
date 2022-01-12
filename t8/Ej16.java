@@ -6,7 +6,7 @@ public class Ej16 {
 		
 		for(int i = 1; i <= 99999; i++) {
 			
-			//Si es primo pintamos el número
+			//Si es capicua pintamos el número
 			if (Ej1al14.esCapicua(i)) {
 				
 				System.out.print(i + " ");
