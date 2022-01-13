@@ -83,8 +83,8 @@ public class Ej19Conversor {
 	}
 	
 	//BINARIO A OCTAL
-	public static long binarioAOctal(long binario) {
-		long octal = 1;
+	public static int binarioAOctal(int binario) {
+		int octal = 1;
 		
 		while (binario > 0) {
 			
@@ -102,9 +102,9 @@ public class Ej19Conversor {
 	}
 	
 	//BINARIO A DECIMAL
-	public static long binarioADecimal(long binario) {
+	public static int binarioADecimal(int binario) {
 		
-		long decimal = 0;
+		int decimal = 0;
 		int bits = Ej1al14.digitos(binario);
 		
 		for(int i = 0; i < bits; i++) {
@@ -118,7 +118,7 @@ public class Ej19Conversor {
 	}
 	
 	//BINARIO A HEXADECIMAL
-	public static String binarioAHexadecimal(long binario) {
+	public static String binarioAHexadecimal(int binario) {
 		
 		String hexadecimal = "";
 		String digitosHexa = "0123456789ABCDEF";
@@ -135,9 +135,9 @@ public class Ej19Conversor {
 	}
 	
 	//OCTAL A BINARIO
-	public static long octalABinario(long octal) {
+	public static int octalABinario(int octal) {
 		
-		long binario = 0;
+		int binario = 0;
 		
 		for (int i = 0; i < Ej1al14.digitos(octal); i++) {
 			
@@ -150,7 +150,7 @@ public class Ej19Conversor {
 	}
 	
 	//DECIMAL A BINARIO
-	public static long decimalABinario(long decimal) {
+	public static int decimalABinario(int decimal) {
 		
 		if (decimal == 0) {
 			
@@ -158,11 +158,11 @@ public class Ej19Conversor {
 			
 		}
 		
-		long binario = 1;
+		int binario = 1;
 		
 		while (decimal > 1) {
 			
-			binario = Ej1al14.pegaPorDetras(binario, (int)decimal % 2);
+			binario = Ej1al14.pegaPorDetras(binario, decimal % 2);
 			decimal = decimal / 2;
 			
 		}

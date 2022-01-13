@@ -23,6 +23,7 @@ public class Ej1al14 {
             
         } while (numero < 10);
 		
+		
 		boolean capicua = esCapicua(numero);
 		System.out.println("Capicua es " + capicua);
 
@@ -149,7 +150,7 @@ public class Ej1al14 {
         System.out.print("Introduce un número: ");
         numero = sc.nextInt();
         
-        System.out.print("¿Qué dígito quieres pegar detrás? ");
+        System.out.print("¿Qué número quieres pegar detrás? ");
         digito = sc.nextInt();
 		
 		int pegapordetras = pegaPorDetras(numero,digito);
@@ -168,7 +169,7 @@ public class Ej1al14 {
 		int pegapordelante = pegaPorDelante(numero,digito);
 		System.out.println("El resultado es "+pegapordelante);
 		
-		
+																																					
 		//EJ 13: TROZO DE NUMERO
 		System.out.println("\nEJ 13. TROZO DE NUMERO:");
 		
@@ -418,10 +419,16 @@ public class Ej1al14 {
 	//11. PEGA POR DETRAS
 	public static int pegaPorDetras(int numero, int digito) {
 		
-		int resultado = 0;
+		int resultado = numero;
+			
+		for(int i = 0; i < digitos(digito); i++) {
+			
+			resultado = resultado * 10;
+			
+		}
 		
-		resultado =  numero * 10 + digito;
-		
+		resultado =  resultado + digito;
+			
 		return resultado;
 		
 	}
@@ -457,16 +464,12 @@ public class Ej1al14 {
 		
 		int resultado = numero;
 		
-		for (int i = 0; i < digitos(numero2); i++) {
-			
-		      resultado = resultado * 10 + digitoN(numero2, i);
-		      
-		}
+		resultado = pegaPorDetras(numero, numero2);
 		
 		return resultado;
 			
 	}
 		
-		
+	
 		
 }

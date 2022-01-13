@@ -27,7 +27,7 @@ public class Ej29al34 {
 		
 		//lo mostramos
 		muestraArrayBiInt(array);
-		
+		/*
 		//EJ 30: FILA DE ARRAY BI INT
 		System.out.println("EJ 30. FILA DE ARRAY BI INT:");
 		System.out.print("Introduce la fila que quieres sacar del array (0-4): ");
@@ -47,8 +47,45 @@ public class Ej29al34 {
   		System.out.print("Introduce el número que quieres econtrar en el array: ");
   	    int numero = sc.nextInt();
   	    Ej20al28.muestraArrayInt(coordenadasEnArrayBiInt(array, numero));
-              
-        
+  	    */
+  	    //EJ 33: ES PUNTO DE SILLA
+  	    System.out.println("\nEJ 33. ES PUNTO DE SILLA:");
+		
+  	    boolean siEs = false;
+  	    for(int i = 0; i < 5; i++) {
+			
+			for(int j = 0; j < 5; j++) {
+				
+				if (esPuntoDeSilla(array, i, j)) {
+					
+					System.out.println("fila " + i + ", columna " + j + " -> " + array[i][j]);
+					siEs = true;
+					
+				}
+				
+			} // for j
+			
+		} // for i
+		
+		if(siEs == false) {
+			
+			System.out.println("No hay punto de silla");
+			
+		}
+		
+		//EJ 34: DIAGONAL
+  	    System.out.println("\nEJ 34. DIAGONAL:");
+  	  System.out.print("Selecciona la fila y columna de la que partir: ");
+  	    System.out.print("Fila: ");
+			int fila = sc.nextInt();
+		System.out.print("Columna: ");
+			int columna = sc.nextInt();
+		System.out.print("¿Qué dirección quieres (nose '\' y neso '/' )? ");
+			String direccion = sc.next();
+		System.out.print("\nLa diagonal es: ");
+		Ej20al28.muestraArrayInt(diagonal(array, fila, columna, direccion));
+		
+		
 	}//main
 	
 	public static int[][] generaArrayBiInt(int filas, int columnas, int minimo, int maximo) {
@@ -119,7 +156,7 @@ public class Ej29al34 {
 		
 		for (int fila = 0; fila < array.length; fila++) {
 			
-			for (int columna = 0; columna < array[0].length; columna++) {
+			for (int columna = 0; columna < array.length; columna++) {
 				
 					if (array[fila][columna] == numero) {
 						
@@ -137,6 +174,46 @@ public class Ej29al34 {
 		
 	}
 
+	public static boolean esPuntoDeSilla(int array[][], int i, int j) {
+		
+		int[] fila = filaDeArrayBiInt(array, i);
+		int[] columna = columnaDeArrayBiInt(array, j);
+		return ((Ej20al28.minimoArrayInt(fila) == array[i][j]) && (Ej20al28.maximoArrayInt(columna) == array[i][j]));
 	
+	}
+	
+	public static int[] diagonal(int array[][], int fila, int columna, String direccion) {
+		
+		int elementos = 0, i, j;
+		int[] diagonalAux = new int [1000];
+		
+		for (i = 0; i < array.length; i++) {
+		
+			for (j = 0; j < array[0].length; j++) {
+				
+				if ( (((columna - j) == (fila - i)) && (direccion.equals("nose"))) || (((columna - j) == (i - fila)) && (direccion.equals("neso"))) ) {
+					
+					diagonalAux[elementos++] = array[i][j];
+					
+				}
+				
+			}
+		
+		}
+		
+		int[] diagonal = new int[elementos];
+		
+		for (j = 0; j < elementos; j++) {
+			
+			diagonal[j] = diagonalAux[j];
+			
+		}
+		
+		return diagonal;
+		
+	}
+	
+
+
 	
 }
