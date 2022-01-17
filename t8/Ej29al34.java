@@ -75,12 +75,11 @@ public class Ej29al34 {
 		
 		//EJ 34: DIAGONAL
   	    System.out.println("\nEJ 34. DIAGONAL:");
-  	  System.out.print("Selecciona la fila y columna de la que partir: ");
   	    System.out.print("Fila: ");
 			int fila = sc.nextInt();
 		System.out.print("Columna: ");
 			int columna = sc.nextInt();
-		System.out.print("¿Qué dirección quieres (nose '\' y neso '/' )? ");
+		System.out.print("¿Qué dirección quieres (nose 'izq-dcha' y neso 'dcha-izq' )? ");
 			String direccion = sc.next();
 		System.out.print("\nLa diagonal es: ");
 		Ej20al28.muestraArrayInt(diagonal(array, fila, columna, direccion));
