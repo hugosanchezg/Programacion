@@ -20,7 +20,7 @@ public class Ej35Palotes {
 		String resultado = "";
 		
 		
-		for(int i = 0; i <= Ej1al14.digitos(n); i++) {
+		for(int i = 0; i < Ej1al14.digitos(n); i++) {
 			
 			for (int j = 0; j < Ej1al14.digitoN(n, i); j++) {
 				
@@ -28,7 +28,7 @@ public class Ej35Palotes {
 				
 			}
 			
-			if (i < Ej1al14.digitos(n) && i != 0) {
+			if (i < Ej1al14.digitos(n) - 1) {
 				
 				resultado += " - ";
 				

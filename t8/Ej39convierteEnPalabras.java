@@ -24,12 +24,13 @@ public class Ej39convierteEnPalabras {
 		
 		int i;
 		//123
-		for(i = 1; i < Ej1al14.digitos(n); i++) {
+		for(i = 0; i < Ej1al14.digitos(n) - 1; i++) {
 			
 			resultado = resultado + palabras[Ej1al14.digitoN(n, i)] + ", ";
 			
 		}
 		
+		//Por si queremos añadir el último sin comas
 		//Sumamos el último dígito de como se ha quedado la i porque no va con comas
 		resultado += palabras[Ej1al14.digitoN(n, i)];
 		

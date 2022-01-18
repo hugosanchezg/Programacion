@@ -5,7 +5,7 @@ public class Ej37convierteEnMorse {
 	
 	public static void main(String[] args) {
 		
-		int [] numeros = {421};
+		int [] numeros = {421,232,43};
 		
 		for(int numero : numeros) {
 			
@@ -25,7 +25,7 @@ public class Ej37convierteEnMorse {
 		int i;
 		
 		//421
-		for(i = 1; i <= Ej1al14.digitos(numero); i++) {
+		for(i = 0; i < Ej1al14.digitos(numero); i++) {
 			
 			resultado += morse[Ej1al14.digitoN(numero, i)];
 			

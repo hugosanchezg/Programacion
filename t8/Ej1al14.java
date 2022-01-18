@@ -364,7 +364,7 @@ public class Ej1al14 {
 		int resultado = 0;
 		
 		//posicion 1 es la primera
-		resultado = (int)(numero / potencia(10, digitos(numero) - n) % 10);
+		resultado = (int)(numero / potencia(10, digitos(numero) - n - 1) % 10);
 		//hacemos el número potencia 10 elevado a el numero de dígitos menos la posición
 		//de esto sacamos la posicion del número al hacerle el resto (%10)
 		
@@ -377,20 +377,18 @@ public class Ej1al14 {
 	
 	//8. POSICION DE DIGITO
 	public static int posicionDeDigito(int numero, int digito) {
-
-		int posicion = 0;
 		
 		for (int i = 0; i < digitos(numero); i++) {
 			
 			if (digitoN(numero, i) == digito) { 
 				
-				posicion = i;
+				return i;
 				
-			}else {posicion = -1;}
+			}
 			
 		}
 		
-		return posicion;
+		return -1;
 		
 	}
 	

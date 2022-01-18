@@ -1,7 +1,7 @@
 package Ejercicios;
 
 import java.util.Scanner;
-
+/*
 public class Ej19Conversor {
 	public static void main(String[] args) {
 		
@@ -192,4 +192,4 @@ public class Ej19Conversor {
 	}
 
 }
-
+*/
